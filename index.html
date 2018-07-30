@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todo</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<header>
+		<div>
+			Рабочее время: <input type="text" placeholder="17"> часов <br>
+			Дата: <input type="text" placeholder="01.08"> 2018г.
+		</div>
+		<div class="task">
+			Задача: <input type="text" placeholder="" class="task_nameQ"> 
+			Описание: <input type="text" placeholder="" class="task_textQ"> 
+			Время: <input type="text" placeholder="" class="task_timeQ"> 
+			<input type="button" value="add" class="task_add"> 
+			<!-- проблема с динамически добавленными блоками -->
+			<input type="button" value="empty" class="task_add2"> 
+		</div>	
+	</header>
+	<section>
+		<article class="article">
+
+        <!-- <div class="one_task"><span class="up">↑</span><span class="down">↓</span><input type="text" placeholder="task:" class="task_name"><input type="text" placeholder="description:"  class="task_description"><input type="text" placeholder="time:"  class="task_time"><span class="delete">delete</span></div> -->
+        
+<!--         <div><a class="up" href="#">Вверх</a><a class="down" href="#">Вниз</a><input type="text"><span class="delete">delete</span></div> -->
+
+        <!-- <div>Блок 2 <a class="up" href="#">Вверх</a> <a class="down" href="#">Вниз</a> <form><input type="text"></form><div>Текст второго блока</div></div> -->
+<p class="total"></p>		
+		</article>
+		<aside>
+			</aside>
+	</section>
+	<script src="main.js"></script>
+	<script>
+
+	</script>
+</body>
+</html>

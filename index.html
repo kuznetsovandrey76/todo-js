@@ -9,21 +9,21 @@
 <body>
 	<header>
 		<div>
-			Рабочее время: <input type="text" placeholder="17"> часов <br>
-			Дата: <input type="text" placeholder="01.08"> 2018г.
+			<span>Рабочее время:<input type="text" value="17" class="work_time">часов</span> 
+			</span>Дата:<input type="date" class="work_date"></span>
 		</div>
 		<div class="task">
 			Задача: <input type="text" placeholder="TASK:" class="task_nameQ"> 
 			Описание: <input type="text" placeholder="description:" class="task_textQ"> 
 			Время: <input type="text" placeholder="time:" class="task_timeQ"> 
-			<input type="button" value="add" class="task_add"> 
+			<input type="button" class="task_add"> 
 		</div>	
 	</header>
 	<section>
 		<article class="article">
 		</article>
 		<aside>
-			<p class="total">0</p>
+			<p class="total"></p>
 		</aside>
 	</section>
 	<script src="main.js"></script>

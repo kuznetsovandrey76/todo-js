@@ -2,6 +2,7 @@
 
 	var storage = [];
 	var id = 0;
+	var result = 0;
 
 	$('.task_add2').click(function() { 
 		// for(var i = 0; i < 2; i++) { 
@@ -20,20 +21,37 @@
 
 
 	$('.task_add').click(function() {
+
 		var name = $('.task_nameQ').val();
 		var text = $('.task_textQ').val();
 		var time = $('.task_timeQ').val();
+		
+		if (time == "") {
+			alert('а время!')
+			return false
+		}
+
 		var task = [];
 		task.push(name, text, time);
 		storage.push(task); 
-		console.log(storage);
-		$('.article').append('<div class="one_task"><span class="up">↑</span><span class="down">↓</span><input type="text" placeholder="task:" class="task_name" value="'+name+'"><input type="text" placeholder="description:"  class="task_description" value="'+text+'"><input type="text" placeholder="time:" class="task_time" value="'+time+'"><span class="delete">delete</span></div>');
+		// console.log(storage);
+		$('.article').append('<div class="one_task">\
+								<span class="up">↑</span><span class="down">↓</span>\
+								<input type="text" placeholder="task:" class="task_name" value="'+name+'">\
+								<input type="text" placeholder="description:" class="task_description" value="'+text+'">\
+								<input type="text" class="task_time" value="'+time+'" disabled>\
+								<span class="delete">delete</span>\
+							  </div>');
 		// setTimeout(function(){
 		$('.task_nameQ').val('');
 		$('.task_textQ').val('');
 		$('.task_timeQ').val('');
 		// }, 2000);
 
+		result+=Number(time);
+		$('.total').text(result);
+		console.log(result);
+		$('.total').val(result);
 
 
 		// $('.article').append('<div><p>' + id + name + text + time + '<span class="del"> del </span></p></div>');
@@ -57,8 +75,8 @@
 
 	$(function() {
         $(document).on('click touchstart', '.delete', function(){ 
-            console.log(this.parentNode.innerHTML);
-            console.log(this);
+            // console.log(this.parentNode.innerHTML);
+            // console.log(this);
         });
         $(document).on('click touchstart', '.edit', function(){ 
             console.log(this.parentNode.innerText);
@@ -68,7 +86,7 @@
 
      // $(document).on('click touchstart', '.up', function(){ 
         
-		$('.total').append('');
+		
 		
 
 
@@ -103,7 +121,30 @@ $(document).on('click', '.down', function(e){
         return false
     });
 $(document).on('click', '.delete', function(e){
+		result -= Number(this.parentNode.children[4].value);
+		$('.total').text(result);
         $(this).parent('div').hide();
         return false
     });
 // })
+
+
+$(document).on('keyup', '.task_time', function(e){
+// $('.task_time').keyup(function() {
+    var $field = $(this);
+
+    // this is the value before the keypress
+    var beforeVal = $field.val();
+
+    setTimeout(function() {
+
+        // this is the value after the keypress
+        var afterVal = $field.val();
+        
+        // $('#log').prepend(
+        //     $('<li></li>').text('value before: ' + beforeVal + '; value now: ' + afterVal)
+        // );
+        // console.log(beforeVal);
+        console.log(afterVal);
+    }, 0);
+});

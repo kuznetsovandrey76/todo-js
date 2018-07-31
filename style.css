@@ -90,7 +90,8 @@ input {
 	padding: 5px;
 }
 .task_time {
-	width: 30px;	
+	width: 24px;	
+	text-align: center;
 }
 .task_description {
 	width: 250px;	
